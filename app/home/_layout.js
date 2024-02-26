@@ -6,7 +6,9 @@ import Settings from "./settings";
 import { Feather } from "@expo/vector-icons"
 import { Ionicons } from "@expo/vector-icons"
 import { SimpleLineIcons } from '@expo/vector-icons';
-import { Button, Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
+import styles from './homePages.style';
+import { COLORS, SIZES } from '../../constants';
 
 function CustomDrawerContent(props) {
   return (
@@ -16,13 +18,13 @@ function CustomDrawerContent(props) {
         <TouchableOpacity
           onPress={() => {
             props.navigation.closeDrawer();
-            //make a logout function, using firebase maybe???
-            console.warn('Sair da conta')
+            //make a signOut function
+            console.warn('Sair da conta');
           }}
           className="w-full items-center flex-row mx-4 my-3"
         >
-          <SimpleLineIcons name="logout" size={22} color="red" />
-          <Text style={{ fontSize: 15, marginLeft: 36, color: 'red', fontWeight: 'bold' }}>Sair</Text>
+          <SimpleLineIcons name="logout" size={SIZES.xLarge} color="red" />
+          <Text style={styles.logoutText}>Sair</Text>
         </TouchableOpacity>
       </View>
     </DrawerContentScrollView>
@@ -35,7 +37,7 @@ export default function HomeLayout() {
   return (
     <Drawer.Navigator
       screenOptions={{
-        headerShadowVisible:false
+        headerShadowVisible:false,  
       }}
       initialRouteName="Início" drawerContent={(props) => <CustomDrawerContent {...props} />}
     >
@@ -43,8 +45,14 @@ export default function HomeLayout() {
         name="Início"
         component={Welcome}
         options={{
-          drawerIcon: ({ color, size }) => <Feather name="home" color={color} size={size}></Feather>,
-          drawerLabel: 'Início'
+          drawerIcon: ({ color }) => <Feather name="home" color={color} size={SIZES.xLarge}></Feather>,
+          drawerLabel: 'Início',
+          drawerLabelStyle: styles.menuText,
+          drawerActiveTintColor: COLORS.primary,
+          drawerActiveBackgroundColor: COLORS.active,
+          drawerStyle: {
+            backgroundColor: COLORS.white,
+          }
         }}
       />
 
@@ -52,8 +60,11 @@ export default function HomeLayout() {
         name="Perfil"
         component={Profile}
         options={{
-          drawerIcon: ({ color, size }) => <Feather name="user" color={color} size={size}></Feather>,
-          drawerLabel: 'Meu Perfil'
+          drawerIcon: ({ color }) => <Feather name="user" color={color} size={SIZES.xLarge}></Feather>,
+          drawerLabel: 'Meu Perfil',
+          drawerLabelStyle: styles.menuText,
+          drawerActiveTintColor: COLORS.primary,
+          drawerActiveBackgroundColor: COLORS.active,
         }}
       />
 
@@ -61,8 +72,11 @@ export default function HomeLayout() {
         name="Configurações"
         component={Settings}
         options={{
-          drawerIcon: ({ color, size }) => <Ionicons name="settings-outline" color={color} size={size}></Ionicons>,
-          drawerLabel: 'Configurações'
+          drawerIcon: ({ color }) => <Ionicons name="settings-outline" color={color} size={SIZES.xLarge}></Ionicons>,
+          drawerLabel: 'Configurações',
+          drawerLabelStyle: styles.menuText,
+          drawerActiveTintColor: COLORS.primary,
+          drawerActiveBackgroundColor: COLORS.active,
         }}
       />
     </Drawer.Navigator>

@@ -4,6 +4,7 @@ import CustomInput from '../components/CustomInput'
 import DismissKeyboard from '../components/DismissKeyboard'
 import CustomButton from '../components/CustomButton';
 import { router } from 'expo-router';
+import styles from './authenticationPages.style';
 
 const onPressSentEmail = () => {
   router.push('signIn');
@@ -18,12 +19,12 @@ export default function resetPassword() {
       <View className="flex-1 items-center justify-center bg-white px-4">
         <KeyboardAvoidingView>
           <View className="items-center justify-center mt-12 mb-4">
-            <Text className="text-4xl font-bold">Recuperar senha</Text>
-            <Text className="mt-4 text-[15px]">Insira o seu usuário no campo abaixo. Enviaremos um email com mais informações, talvez demore alguns minutos.</Text>
+            <Text style={styles.title}>Recuperar senha</Text>
+            <Text style={styles.longText}>Insira o seu usuário no campo abaixo. Enviaremos um email com mais informações, talvez demore alguns minutos.</Text>
           </View>
           <CustomInput placeholder='Usuário' value={user} setValue={setUser}/>
           <View className="w-full flex-row">
-            <CustomButton onPress={onPressSentEmail} classBtn={'w-full bg-blue-500 rounded-xl px-8 py-4 my-3 items-center'} classTxt={'text-white font-bold text-lg'} text='Confirmar'/>
+            <CustomButton onPress={onPressSentEmail} styleBtn={styles.button_PRIMARY} styleTxt={styles.text_PRIMARY} text='Confirmar'/>
           </View>
         </KeyboardAvoidingView>
       </View>

@@ -1,9 +1,11 @@
-import { View, Text, KeyboardAvoidingView, Keyboard } from 'react-native'
+import { View, Text, KeyboardAvoidingView, Keyboard, StyleSheet } from 'react-native'
 import React, { useState } from 'react'
 import { Link, router } from 'expo-router'
 import CustomInput from '../components/CustomInput'
 import CustomButton from '../components/CustomButton'
 import DismissKeyboard from '../components/DismissKeyboard';
+import styles from "./authenticationPages.style";
+import { FONT } from '../constants/theme'
 
 const onPressLogin = () => {
   router.push('home');
@@ -22,18 +24,18 @@ export default function SignIn() {
   return (
     <DismissKeyboard>
       <View className="flex-1 items-center justify-center bg-white px-4">
-        <KeyboardAvoidingView className="w-full" behavior='padding' >
+        <KeyboardAvoidingView className="w-full" behavior='position'>
           <View className="items-center justify-center my-12">
-            <Text className="text-4xl font-bold">Login App</Text>
+            <Text style={styles.title}>Login App</Text>
           </View>
 
           <CustomInput placeholder='Usuário' value={user} setValue={setUser} />
           <CustomInput placeholder='Senha' value={password} setValue={setPassword} secureTextEntry={true} />
           <View className="mb-3 w-full items-end">
-            <Link href="/resetPassword" className='text-blue-600' onPress={() => Keyboard.dismiss()}>Esqueceu a senha ?</Link>
+            <Link href="/resetPassword" style={styles.link} onPress={() => Keyboard.dismiss()}>Esqueceu a senha ?</Link>
           </View>
-          <CustomButton onPress={onPressLogin} classBtn={'w-full bg-blue-500 rounded-xl px-8 py-4 my-3 items-center'} classTxt={"text-white font-bold text-lg"} text='Entrar' />
-          <CustomButton onPress={onPressSignUp} classBtn={'w-full bg-transparent rounded-xl px-8 py-4 items-center'} classTxt={"text-black font-bold text-lg"} text='Criar conta' />
+          <CustomButton onPress={onPressLogin} styleBtn={styles.button_PRIMARY} styleTxt={styles.text_PRIMARY} text='Entrar' />
+          <CustomButton onPress={onPressSignUp} styleBtn={styles.button_SECONDARY} styleTxt={styles.text_SECONDARY} text='Criar conta' />
 
         </KeyboardAvoidingView>
       </View>
