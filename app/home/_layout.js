@@ -1,14 +1,14 @@
 import 'react-native-gesture-handler';
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList } from "@react-navigation/drawer";
-import Welcome from "./welcome";
-import Profile from './profile';
-import Settings from "./settings";
 import { Feather } from "@expo/vector-icons"
 import { Ionicons } from "@expo/vector-icons"
 import { SimpleLineIcons } from '@expo/vector-icons';
 import { Text, TouchableOpacity, View } from "react-native";
 import styles from './homePages.style';
 import { COLORS, SIZES } from '../../constants';
+import Welcome from "./welcome";
+import HomeMyAccount from './myAccount/homeMyAccount';
+import StackRoutes from './myAccount/_layout';
 
 function CustomDrawerContent(props) {
   return (
@@ -37,7 +37,7 @@ export default function HomeLayout() {
   return (
     <Drawer.Navigator
       screenOptions={{
-        headerShadowVisible:false,  
+        headerShadowVisible: false,
       }}
       initialRouteName="Início" drawerContent={(props) => <CustomDrawerContent {...props} />}
     >
@@ -57,11 +57,11 @@ export default function HomeLayout() {
       />
 
       <Drawer.Screen
-        name="Perfil"
-        component={Profile}
+        name="Minha Conta"
+        component={HomeMyAccount}
         options={{
           drawerIcon: ({ color }) => <Feather name="user" color={color} size={SIZES.xLarge}></Feather>,
-          drawerLabel: 'Meu Perfil',
+          drawerLabel: 'Minha Conta',
           drawerLabelStyle: styles.menuText,
           drawerActiveTintColor: COLORS.primary,
           drawerActiveBackgroundColor: COLORS.active,
@@ -69,11 +69,11 @@ export default function HomeLayout() {
       />
 
       <Drawer.Screen
-        name="Configurações"
-        component={Settings}
+        name="Sla"
+        component={StackRoutes}
         options={{
-          drawerIcon: ({ color }) => <Ionicons name="settings-outline" color={color} size={SIZES.xLarge}></Ionicons>,
-          drawerLabel: 'Configurações',
+          drawerIcon: ({ color }) => <Feather name="user" color={color} size={SIZES.xLarge}></Feather>,
+          drawerLabel: 'Sla',
           drawerLabelStyle: styles.menuText,
           drawerActiveTintColor: COLORS.primary,
           drawerActiveBackgroundColor: COLORS.active,

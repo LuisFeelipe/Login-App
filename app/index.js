@@ -1,5 +1,5 @@
 import { View } from 'react-native'
-import React, {useCallback} from 'react'
+import React, { useCallback } from 'react'
 import SignIn from './signIn'
 import { useFonts } from 'expo-font'
 import * as SplashScreen from 'expo-splash-screen'
@@ -14,18 +14,18 @@ export default function Root() {
   });
 
   const onLayoutRootView = useCallback(async () => {
-    if(fontsLoaded || fontError){
+    if (fontsLoaded || fontError) {
       await SplashScreen.hideAsync();
     }
   }, [fontsLoaded, fontError]);
 
-  if (!fontsLoaded && !fontError){
+  if (!fontsLoaded && !fontError) {
     return null;
   }
 
   return (
     <View className="flex-1" onLayout={onLayoutRootView}>
-      <SignIn/>
+      <SignIn />
     </View>
   )
 }

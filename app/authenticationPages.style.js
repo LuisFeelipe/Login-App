@@ -6,41 +6,39 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: FONT.bold,
     fontSize: SIZES.xxxLarge,
-    color: COLORS.default,
+    color: COLORS.default
   },
 
   button_PRIMARY: {
     backgroundColor: COLORS.primary,
-    marginVertical: 10,
+    marginVertical: 10
   },
 
   text_PRIMARY: {
     color: COLORS.white,
-    fontFamily: FONT.bold,
-    fontSize: SIZES.large,
+    fontSize: SIZES.large
   },  
 
   button_SECONDARY: {
-    backgroundColor: COLORS.transparent,
+    backgroundColor: COLORS.transparent
   },
 
   text_SECONDARY: {
     color: COLORS.default,
-    fontFamily: FONT.bold,
-    fontSize: SIZES.large,
+    fontSize: SIZES.large
   },
 
   link: {
     fontFamily: FONT.semiBold,
     fontSize: SIZES.medium,
-    color: COLORS.primary,
+    color: COLORS.primary
   },
 
   longText: {
     fontFamily: FONT.regular,
     fontSize: SIZES.small,
     color: COLORS.default,
-    marginVertical: 15,
+    marginVertical: 15
   }
 })
 

@@ -23,8 +23,7 @@ const styles = StyleSheet.create({
     fontFamily: FONT.regular,
     color: 'red',
     marginLeft: 36,
-  },
-  
+  }
 });
 
 export default styles;

@@ -1,11 +1,10 @@
-import { View, Text, KeyboardAvoidingView, Keyboard, StyleSheet } from 'react-native'
+import { View, Text, KeyboardAvoidingView, Keyboard } from 'react-native'
 import React, { useState } from 'react'
 import { Link, router } from 'expo-router'
 import CustomInput from '../components/CustomInput'
 import CustomButton from '../components/CustomButton'
 import DismissKeyboard from '../components/DismissKeyboard';
 import styles from "./authenticationPages.style";
-import { FONT } from '../constants/theme'
 
 const onPressLogin = () => {
   router.push('home');

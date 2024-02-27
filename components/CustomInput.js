@@ -1,9 +1,8 @@
 import React from 'react'
 import { View, TextInput, StyleSheet } from 'react-native'
-import { Feather } from '@expo/vector-icons'
 import { COLORS, SIZES, FONT } from '../constants/theme'
  
-const CustomInput = ({value, setValue, placeholder, secureTextEntry}) => {
+const CustomInput = ({value, setValue, placeholder, secureTextEntry, readOnly}) => {
   return (
     <View className="w-full flex-row justify-between border rounded-xl p-5 my-2">
       <TextInput 
@@ -15,6 +14,7 @@ const CustomInput = ({value, setValue, placeholder, secureTextEntry}) => {
         secureTextEntry={secureTextEntry}  
         autoCorrect={false}
         spellCheck={false}
+        readOnly={readOnly}
       />
     </View>
   );
