@@ -4,7 +4,7 @@ import { COLORS, SIZES, FONT } from '../constants/theme'
  
 const CustomInput = ({value, setValue, placeholder, secureTextEntry, readOnly}) => {
   return (
-    <View className="w-full flex-row justify-between border rounded-xl p-5 my-2">
+    <View className="w-full flex-row border rounded-xl p-5 my-2">
       <TextInput 
         value={value}
         onChangeText={setValue}

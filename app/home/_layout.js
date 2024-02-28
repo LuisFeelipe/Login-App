@@ -58,22 +58,10 @@ export default function HomeLayout() {
 
       <Drawer.Screen
         name="Minha Conta"
-        component={HomeMyAccount}
-        options={{
-          drawerIcon: ({ color }) => <Feather name="user" color={color} size={SIZES.xLarge}></Feather>,
-          drawerLabel: 'Minha Conta',
-          drawerLabelStyle: styles.menuText,
-          drawerActiveTintColor: COLORS.primary,
-          drawerActiveBackgroundColor: COLORS.active,
-        }}
-      />
-
-      <Drawer.Screen
-        name="Sla"
         component={StackRoutes}
         options={{
           drawerIcon: ({ color }) => <Feather name="user" color={color} size={SIZES.xLarge}></Feather>,
-          drawerLabel: 'Sla',
+          drawerLabel: 'Minha Conta',
           drawerLabelStyle: styles.menuText,
           drawerActiveTintColor: COLORS.primary,
           drawerActiveBackgroundColor: COLORS.active,

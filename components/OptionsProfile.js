@@ -1,21 +1,21 @@
 import React from 'react';
-import { View, Pressable, TouchableOpacity, Text } from 'react-native';
+import { View, TouchableOpacity, Text } from 'react-native';
 import { Feather } from '@expo/vector-icons'
-import { COLORS, SIZES } from '../constants';
-import { Link, router } from 'expo-router';
+import { COLORS, SIZES } from '../constants'
+import styles from '../app/home/myAccount/myAccount.styles'
 
-const OptionsProfile = () => {
+const OptionsProfile = ({ navigation, goTo, icon, titleTxt, subtitleTxt }) => {
   return (
-    <Pressable className="flex w-full p-4">
-      <View className="flex-row items-center">
-        <Feather name='user' color={COLORS.default} size={SIZES.large}></Feather>
+    <View>
+      <TouchableOpacity onPress={() => navigation.navigate(goTo)} className="flex flex-row items-center my-3">
+        <Feather name={icon} color={COLORS.gray} size={SIZES.large}></Feather>
         <View className="flex-1 ml-3">
-          <Text>Informações da Conta</Text>
-          <Text style={{ fontSize: SIZES.small, maxWidth: '100%' }}>Aliquip quis veniam ea aliqua ullamco mollit Lorem. Aliquip nulla duis sint sint.</Text>
+          <Text style={styles.title}>{titleTxt}</Text>
+          <Text style={styles.subtitle}>{subtitleTxt}</Text>
         </View>
-        <Feather name='chevron-right' color={COLORS.default} size={SIZES.large}></Feather>
-      </View>
-    </Pressable>
+        <Feather name='chevron-right' color={COLORS.gray} size={SIZES.large}></Feather>
+      </TouchableOpacity>
+    </View>
   );
 }
 

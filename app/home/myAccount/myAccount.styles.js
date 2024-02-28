@@ -55,6 +55,61 @@ const styles = StyleSheet.create({
     fontSize: SIZES.large,
     fontFamily: FONT.bold
   },
+
+  accordHeader: {
+    padding: 16,
+    backgroundColor: 'white',
+    color: 'black',
+    flex: 1,
+    flexDirection: 'row',
+  },
+
+  accordTitle: {
+    fontSize: 18,
+    fontFamily: FONT.semiBold
+  },
+
+  accordBody: {
+    paddingTop: 2,
+    width: '100%',
+    paddingHorizontal: 16,
+    alignSelf: 'center'
+  },
+
+  text: {
+    fontSize: 12,
+    fontFamily: FONT.semiBold,
+    alignSelf: 'flex-end',
+    textAlign: 'right'
+  },
+
+  price: {
+    fontFamily: FONT.semiBold,
+    fontSize: SIZES.xSmall,
+    textAlign: 'right'
+  },
+
+  customInput: {
+    width: '100%',
+    color: COLORS.default,
+    fontFamily: FONT.regular,
+    fontSize: SIZES.medium,
+    textAlignVertical: 'top'
+  },
+
+  button_PRIMARY: {
+    backgroundColor: COLORS.primary,
+  },
+
+  text_PRIMARY: {
+    color: COLORS.white,
+    fontSize: SIZES.large
+  }, 
+
+  paragraph: {
+    fontSize: SIZES.small,
+    fontFamily: FONT.regular
+  }
 });
 
 export default styles;
